@@ -1,13 +1,13 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
-let menuItems = [
-  'Students',
-  'Faculty',
-  "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
-];
+// let array = [
+//     'Students',
+//     'Faculty',
+//     "What's New",
+//     'Tech Trends',
+//     'Music',
+//     'Log Out'
+// ];
 
 /* 
 
@@ -32,4 +32,66 @@ let menuItems = [
 
   Step 6: add the menu component to the DOM.
   
+
+
 */
+
+let array = [
+    'Students',
+    'Faculty',
+    "What's New",
+    'Tech Trends',
+    'Music',
+    'Log Out'
+];
+
+function createMenuComponent() {
+    //creating Elements
+    const menuBtn = document.querySelector('.menu-button');
+    const menu1 = document.createElement('div');
+    menu1.classList.add('menu');
+
+
+    const ul = document.createElement('ul');
+
+    const li1 = document.createElement('li');
+    li1.textContent = array[0];
+
+    const li2 = document.createElement('li');
+    li2.textContent = array[1];
+
+    const li3 = document.createElement('li');
+    li3.textContent = array[2];
+
+    const li4 = document.createElement('li');
+    li4.textContent = array[3];
+
+    const li5 = document.createElement('li');
+    li5.textContent = array[4];
+
+    const li6 = document.createElement('li');
+    li6.textContent = array[5];
+    //appending
+    menu1.appendChild(ul);
+    ul.appendChild(li1);
+    ul.appendChild(li2);
+    ul.appendChild(li3);
+    ul.appendChild(li4);
+    ul.appendChild(li5);
+    ul.appendChild(li6);
+
+
+    // li.array.forEach(element => {
+    //     element.classList.add(list - style - type: none: )
+    // });
+
+    menuBtn.addEventListener('click', () => {
+        menu1.classList.toggle('menu--open');
+    })
+
+    return menu1;
+}
+
+
+const menuBar = document.querySelector('body');
+menuBar.appendChild(createMenuComponent())
